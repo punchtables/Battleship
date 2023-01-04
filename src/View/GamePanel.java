@@ -11,6 +11,7 @@ public class GamePanel extends JPanel {
     public GamePanel(Controller controller) {
 
         this.controller = controller;
+        new GridLayout(11,11);
         createComponents();
     }
 
