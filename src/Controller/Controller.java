@@ -2,14 +2,16 @@ package Controller;
 
 import Model.Ship.Ship;
 import Model.Spelplan1;
+import View.MainFrame;
 
 public class Controller {
 
     private Spelplan1 spelplan;
     private Ship ship;
+    private MainFrame view;
 
     public Controller(){
-
+        view = new MainFrame(this);
     }
 
 public void checkPosition(int i, int i2){

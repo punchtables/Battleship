@@ -23,18 +23,24 @@ public class MainPanel extends JPanel {
     }
 
     private void setupPanel() {
-        BorderLayout layout = new BorderLayout();
+        GridBagLayout layout = new GridBagLayout();
+        GridBagConstraints c = new GridBagConstraints();
         setLayout(layout);
 
         Border border = this.getBorder();
         Border margin = BorderFactory.createEmptyBorder(10, 10 ,10, 10);
         setBorder(new CompoundBorder(border, margin));
 
-        gamePanel = new GamePanel(controller);
-        add(gamePanel, BorderLayout.CENTER);
-
+        c.gridx = 0;
+        c.gridy = 0;
+        c.weightx = 0.3;
         infoPanel = new InfoPanel(controller);
-        add(infoPanel, BorderLayout.WEST);
+        add(infoPanel, c);
 
+        c.gridx = 1;
+        c.gridy = 0;
+        c.weightx = 0.7;
+        gamePanel = new GamePanel(controller);
+        add(gamePanel, c);
     }
 }
