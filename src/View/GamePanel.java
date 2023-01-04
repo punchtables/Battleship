@@ -16,17 +16,21 @@ public class GamePanel extends JPanel {
 
     private void createComponents() {
         setLayout(new GridLayout(11, 11));
+        char c = 'A';
 
         for (int i = 0; i < 11; i++) {
             for (int j = 0; j < 11; j++) {
                 if (i == 0 && j > 0) {
                     // Add the column labels
-                    add(new JLabel("Column " + j, SwingConstants.CENTER));
+                    add(new JLabel("" + Character.toString(c), SwingConstants.CENTER));
+                    c++;
                 } else if (j == 0 && i > 0) {
                     // Add the row labels
-                    add(new JLabel("Row " + i, SwingConstants.CENTER));
+                    add(new JLabel(String.valueOf(i), SwingConstants.CENTER));
                 } else {
-                    add(new JButton("Button (" + i + ", " + j + ")"));
+                    JButton button = new JButton("X");
+                    button.setSize(20,20);
+                    add(button);
                 }
             }
         }
