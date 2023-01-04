@@ -11,12 +11,27 @@ public class GamePanel extends JPanel {
     public GamePanel(Controller controller) {
 
         this.controller = controller;
-        new GridLayout(11,11);
         createComponents();
     }
 
     private void createComponents() {
-        for (int i = 0; i < 11; i++) {
+        setLayout(new GridLayout(11, 11));
+
+        // Add labels for the rows
+        for (int i = 1; i <= 10; i++) {
+            add(new JLabel(String.valueOf(i), JLabel.CENTER));
+        }
+
+        // Add labels for the columns
+        for (int i = 0; i < 10; i++) {
+            add(new JLabel(String.valueOf((char) ('A' + i)), JLabel.CENTER));
+        }
+
+        // Add buttons
+        for (int i = 1; i <= 100; i++) {
+            add(new JButton(String.valueOf(i)));
+
+        /*for (int i = 0; i < 11; i++) {
             for (int j = 0; j < 11; j++) {
                 if (i == 0 && j > 0) {
                     // Add the column labels
@@ -28,6 +43,7 @@ public class GamePanel extends JPanel {
                     add(new JButton("Button (" + i + ", " + j + ")"));
                 }
             }
+        }*/
         }
     }
 }
