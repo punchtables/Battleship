@@ -20,15 +20,30 @@ public class GamePanel extends JPanel {
 
         for (int i = 0; i < 11; i++) {
             for (int j = 0; j < 11; j++) {
-                if (i == 0 && j > 0) {
+                if(i==0 && j==0){
+                    add(new JLabel(""));
+                }
+                else if (i == 0 && j > 0) {
                     // Add the column labels
-                    add(new JLabel("" + Character.toString(c), SwingConstants.CENTER));
+                    JLabel label = new JLabel("" + Character.toString(c), SwingConstants.CENTER);
+                    label.setSize(20,20);
+                    add(label);
+                    Font font = new Font("Arial", Font.BOLD, 12);
+                    label.setFont(font);
                     c++;
+                    //add(new JLabel("" + Character.toString(c), SwingConstants.CENTER));
+                   // c++;
                 } else if (j == 0 && i > 0) {
                     // Add the row labels
-                    add(new JLabel(String.valueOf(i), SwingConstants.CENTER));
+                    JLabel labell = new JLabel(String.valueOf(i), SwingConstants.CENTER);
+                    labell.setSize(20,20);
+                    Font font = new Font("Arial", Font.BOLD, 18);
+                    labell.setFont(font);
+                    add(labell);
+                    //add(new JLabel(String.valueOf(i), SwingConstants.CENTER));
+
                 } else {
-                    JButton button = new JButton("X");
+                    JButton button = new JButton("");
                     button.setSize(20,20);
                     add(button);
                 }
