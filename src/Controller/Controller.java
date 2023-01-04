@@ -3,7 +3,7 @@ package Controller;
 import Model.Ship.Ship;
 import Model.Spelplan1;
 import View.MainFrame;
-
+//TEST
 public class Controller {
 
     private Spelplan1 spelplan;
