@@ -25,4 +25,8 @@ public class MainFrame {
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
     }
+
+    public void increaseShotCounter(int nbrOfShots){
+        panel.infoPanel.increaseShotCounter(nbrOfShots);
+    }
 }

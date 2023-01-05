@@ -49,4 +49,8 @@ public class InfoPanel extends JPanel {
         infoPanelExitGame = new InfoPanelExitGame(controller);
         add(infoPanelExitGame, c);
     }
+
+    public void increaseShotCounter(int nbrOfShots){
+        infoPanelShots.increaseShotCounter(nbrOfShots);
+    }
 }
