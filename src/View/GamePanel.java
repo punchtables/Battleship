@@ -2,6 +2,9 @@ package View;
 
 import Controller.Controller;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.*;
 import java.awt.*;
 //TEST
@@ -44,8 +47,21 @@ public class GamePanel extends JPanel {
                     JButton button = new JButton("");
                     button.setPreferredSize(new Dimension(40,40));
                     add(button);
+                    int finalJ = (j-1);
+                    int finalI = (i-1);
+                    button.addActionListener(new ActionListener() {
+                        @Override
+                        public void actionPerformed(ActionEvent e) {
+                        controller.checkPosition(finalI, finalJ);
+                        }
+                    });
+
                 }
             }
         }
     }
+
+
+
+
 }
