@@ -35,12 +35,16 @@ public class Spelplan1 {
 
     }*/
 
-    public String getShipAt(int i, int i1){
-       // createSpel();
-        if (spelplan[i][i1]!=null){
-            return spelplan[i][i1].getClass().getTypeName();
+    public String getShipAt(int i, int j){
+
+        if (spelplan[i][j]!=null){
+            return spelplan[i][j].getClass().getTypeName();
         }else{
           return "";}
+
+    }
+    public Ship getShipSizeAt(int i, int j){
+        return spelplan[i][j];
     }
 
 }
