@@ -3,6 +3,7 @@ package View;
 import Controller.Controller;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class InfoPanelShots extends JPanel {
     private Controller controller;
@@ -17,6 +18,7 @@ public class InfoPanelShots extends JPanel {
 
     private void createComponents() {
         shots = new JLabel("Shots: 0");
+        shots.setPreferredSize(new Dimension(100, 50));
         add(shots);
     }
 
