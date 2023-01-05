@@ -16,6 +16,7 @@ public class Controller {
     int torpedoC = 0;
     int subC = 0;
     int hunterC = 0;
+    int shots;
 
     public Controller(){
         view = new MainFrame(this);
@@ -51,6 +52,8 @@ public class Controller {
     }
 public void checkPosition(int i, int j){
     System.out.println(i+" "+j);
+    shots++;
+    view.increaseShotCounter(shots);
 
     String choice = spelplan.getShipAt(i,j);
 switch(choice){
