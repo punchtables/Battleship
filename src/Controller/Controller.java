@@ -62,30 +62,45 @@ switch(choice){
         cruiserC++;
 
         if(cruiserC!=spelplan.getShipSizeAt(i,j).getSize()){
-            System.out.println("Cruiser hit");
+            view.setHitMiss("Cruiser hit");
         }else if(cruiserC==spelplan.getShipSizeAt(i,j).getSize()){
-            System.out.println("Cruiser sunk!");
+            view.setHitMiss("Cruiser sunk!");
         }
         break;
     case "Model.Ship.Hunter":
-        System.out.println("Hunter hit!");
+        hunterC++;
+        if(hunterC!=spelplan.getShipSizeAt(i,j).getSize()){
+            view.setHitMiss("Hunter hit");
+        }else if(hunterC==spelplan.getShipSizeAt(i,j).getSize()){
+            view.setHitMiss("Hunter sunk!");
+        }
         break;
     case "Model.Ship.Submarine":
         subC++;
         if(subC!=spelplan.getShipSizeAt(i,j).getSize()){
-            System.out.println("Submarine hit");
+            view.setHitMiss("Submarine hit!");
         }else if(subC==spelplan.getShipSizeAt(i,j).getSize()){
-            System.out.println("Submarine sunk!");
+            view.setHitMiss("Submarine sunk!");
         }
         break;
     case "Model.Ship.Torpedo":
-        System.out.println("Torpedo hit!");
+        torpedoC++;
+        if(torpedoC!=spelplan.getShipSizeAt(i,j).getSize()){
+            view.setHitMiss("Torpedo hit!");
+        }else if(torpedoC==spelplan.getShipSizeAt(i,j).getSize()){
+            view.setHitMiss("Torpedo sunk!");
+        }
         break;
     case "Model.Ship.Warrior":
-        System.out.println("Warrior hit!");
+        warriorC++;
+        if(warriorC!=spelplan.getShipSizeAt(i,j).getSize()){
+            view.setHitMiss("Warrior hit!");
+        }else if(warriorC==spelplan.getShipSizeAt(i,j).getSize()){
+            view.setHitMiss("Warrior sunk!");
+        }
         break;
     default:
-        System.out.println("You missed!");
+        view.setHitMiss("You missed!");
         break;
 
 }

@@ -29,4 +29,7 @@ public class MainFrame {
     public void increaseShotCounter(int nbrOfShots){
         panel.infoPanel.increaseShotCounter(nbrOfShots);
     }
+    public void setHitMiss(String miss){
+        panel.infoPanel.populateHit(miss);
+    }
 }

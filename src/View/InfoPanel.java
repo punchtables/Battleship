@@ -53,4 +53,7 @@ public class InfoPanel extends JPanel {
     public void increaseShotCounter(int nbrOfShots){
         infoPanelShots.increaseShotCounter(nbrOfShots);
     }
+    public void populateHit(String miss){
+        infoPanelHitMiss.setText(miss);
+    }
 }
