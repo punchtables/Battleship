@@ -17,6 +17,7 @@ public class Controller {
     int subC = 0;
     int hunterC = 0;
     int shots;
+    int gameover;
 
     public Controller(){
         view = new MainFrame(this);
@@ -53,6 +54,7 @@ public class Controller {
 public void checkPosition(int i, int j){
     System.out.println(i+" "+j);
     shots++;
+
     view.increaseShotCounter(shots);
 
     String choice = spelplan.getShipAt(i,j);
@@ -60,43 +62,58 @@ switch(choice){
 
     case "Model.Ship.Cruiser":
         cruiserC++;
+        gameover++;
 
         if(cruiserC!=spelplan.getShipSizeAt(i,j).getSize()){
             view.setHitMiss("Cruiser hit");
         }else if(cruiserC==spelplan.getShipSizeAt(i,j).getSize()){
             view.setHitMiss("Cruiser sunk!");
+        }if(gameover==15){
+            view.setHitMiss("All ships sunk!");
         }
         break;
     case "Model.Ship.Hunter":
         hunterC++;
+        gameover++;
         if(hunterC!=spelplan.getShipSizeAt(i,j).getSize()){
             view.setHitMiss("Hunter hit");
         }else if(hunterC==spelplan.getShipSizeAt(i,j).getSize()){
             view.setHitMiss("Hunter sunk!");
+        }if(gameover==15){
+            view.setHitMiss("All ships sunk!");
         }
         break;
     case "Model.Ship.Submarine":
         subC++;
+        gameover++;
         if(subC!=spelplan.getShipSizeAt(i,j).getSize()){
             view.setHitMiss("Submarine hit!");
         }else if(subC==spelplan.getShipSizeAt(i,j).getSize()){
             view.setHitMiss("Submarine sunk!");
+        }if(gameover==15){
+            view.setHitMiss("All ships sunk!");
         }
         break;
     case "Model.Ship.Torpedo":
         torpedoC++;
+        gameover++;
         if(torpedoC!=spelplan.getShipSizeAt(i,j).getSize()){
             view.setHitMiss("Torpedo hit!");
         }else if(torpedoC==spelplan.getShipSizeAt(i,j).getSize()){
             view.setHitMiss("Torpedo sunk!");
+        }if(gameover==15){
+            view.setHitMiss("All ships sunk!");
         }
         break;
     case "Model.Ship.Warrior":
         warriorC++;
+        gameover++;
         if(warriorC!=spelplan.getShipSizeAt(i,j).getSize()){
             view.setHitMiss("Warrior hit!");
         }else if(warriorC==spelplan.getShipSizeAt(i,j).getSize()){
             view.setHitMiss("Warrior sunk!");
+        }if(gameover==15){
+            view.setHitMiss("All ships sunk!");
         }
         break;
     default:
