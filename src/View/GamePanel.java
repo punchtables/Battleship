@@ -49,10 +49,12 @@ public class GamePanel extends JPanel {
                     add(button);
                     int finalJ = (j-1);
                     int finalI = (i-1);
+
                     button.addActionListener(new ActionListener() {
                         @Override
                         public void actionPerformed(ActionEvent e) {
                         controller.checkPosition(finalI, finalJ);
+
                         }
                     });
 
@@ -61,8 +63,8 @@ public class GamePanel extends JPanel {
         }
     }
 
-    public void getButtonAt(int i, int j){
-
+    public void setEnabled(JButton button,boolean hit){
+            button.setEnabled(hit);
     }
 
 
