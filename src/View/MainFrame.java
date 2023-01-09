@@ -32,4 +32,10 @@ public class MainFrame {
     public void setHitMiss(String miss){
         panel.infoPanel.populateHit(miss);
     }
+    public void disableButton(int i, int j){
+        panel.disableButton(i, j);
+    }
+    public void setMissButton(int i, int j){
+        panel.setMissButton(i, j);
+    }
 }

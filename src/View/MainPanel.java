@@ -43,4 +43,10 @@ public class MainPanel extends JPanel {
         gamePanel = new GamePanel(controller);
         add(gamePanel, c);
     }
+    public void disableButton(int i, int j){
+        gamePanel.disableButton(i, j);
+    }
+    public void setMissButton(int i, int j){
+        gamePanel.setMissButton(i, j);
+    }
 }

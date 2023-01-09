@@ -48,7 +48,9 @@ public class GamePanel extends JPanel {
                 } else {
                     button[i][j] = new JButton("");
                     button[i][j].setPreferredSize(new Dimension(40,40));
+
                     add(button[i][j]);
+
                     int finalJ = (j-1);
                     int finalI = (i-1);
 
@@ -64,9 +66,18 @@ public class GamePanel extends JPanel {
         }
     }
 
-    public void setEnabled(int i, int j){
+    public void disableButton(int i, int j){
         button[i+1][j+1].setEnabled(false);
     }
+    public void setMissButton(int i, int j){
+        Color color = new Color(3, 203, 255);
+        button[i+1][j+1].setBackground(color);
+        //Dimension size = new Dimension(40, 40);
+        Font font = new Font("Verdana", Font.BOLD, 12);
+        button[i+1][j+1].setFont(font);
+        button[i+1][j+1].setText("X");
+    }
+    //public void
 
 
 

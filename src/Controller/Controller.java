@@ -11,7 +11,6 @@ public class Controller {
     private Ship ship;
     private Ship[][] ships;
     private MainFrame view;
-    private GamePanel gpanel;
 
     int cruiserC = 0;
     int warriorC = 0;
@@ -23,7 +22,6 @@ public class Controller {
 
     public Controller(){
         view = new MainFrame(this);
-        gpanel = new GamePanel(this);
         createSpelPlan();
     }
 
@@ -66,6 +64,7 @@ switch(choice){
     case "Model.Ship.Cruiser":
         cruiserC++;
         gameover++;
+        view.disableButton(i, j);
 
         if(cruiserC!=spelplan.getShipSizeAt(i,j).getSize()){
             view.setHitMiss("Cruiser hit");
@@ -78,6 +77,7 @@ switch(choice){
     case "Model.Ship.Hunter":
         hunterC++;
         gameover++;
+        view.disableButton(i, j);
         if(hunterC!=spelplan.getShipSizeAt(i,j).getSize()){
             view.setHitMiss("Hunter hit");
         }else if(hunterC==spelplan.getShipSizeAt(i,j).getSize()){
@@ -89,6 +89,7 @@ switch(choice){
     case "Model.Ship.Submarine":
         subC++;
         gameover++;
+        view.disableButton(i, j);
         if(subC!=spelplan.getShipSizeAt(i,j).getSize()){
             view.setHitMiss("Submarine hit!");
         }else if(subC==spelplan.getShipSizeAt(i,j).getSize()){
@@ -100,6 +101,7 @@ switch(choice){
     case "Model.Ship.Torpedo":
         torpedoC++;
         gameover++;
+        view.disableButton(i, j);
         if(torpedoC!=spelplan.getShipSizeAt(i,j).getSize()){
             view.setHitMiss("Torpedo hit!");
         }else if(torpedoC==spelplan.getShipSizeAt(i,j).getSize()){
@@ -111,6 +113,7 @@ switch(choice){
     case "Model.Ship.Warrior":
         warriorC++;
         gameover++;
+        view.disableButton(i, j);
         if(warriorC!=spelplan.getShipSizeAt(i,j).getSize()){
             view.setHitMiss("Warrior hit!");
         }else if(warriorC==spelplan.getShipSizeAt(i,j).getSize()){
@@ -121,7 +124,8 @@ switch(choice){
         break;
     default:
         view.setHitMiss("You missed!");
-        gpanel.setEnabled(i, j);
+        view.disableButton(i, j);
+        view.setMissButton(i, j);
         break;
 
 }
