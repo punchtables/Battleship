@@ -10,6 +10,7 @@ import java.awt.*;
 //TEST
 public class GamePanel extends JPanel {
     private Controller controller;
+    private JButton[][] button;
 
     public GamePanel(Controller controller) {
 
@@ -20,6 +21,7 @@ public class GamePanel extends JPanel {
     private void createComponents() {
         setLayout(new GridLayout(11, 11));
         char c = 'A';
+        button = new JButton[11][11];
 
         for (int i = 0; i < 11; i++) {
             for (int j = 0; j < 11; j++) {
@@ -44,17 +46,16 @@ public class GamePanel extends JPanel {
                     add(labell);
 
                 } else {
-                    JButton button = new JButton("");
-                    button.setPreferredSize(new Dimension(40,40));
-                    add(button);
+                    button[i][j] = new JButton("");
+                    button[i][j].setPreferredSize(new Dimension(40,40));
+                    add(button[i][j]);
                     int finalJ = (j-1);
                     int finalI = (i-1);
 
-                    button.addActionListener(new ActionListener() {
+                    button[i][j].addActionListener(new ActionListener() {
                         @Override
                         public void actionPerformed(ActionEvent e) {
                         controller.checkPosition(finalI, finalJ);
-                        button.setEnabled(false);
                         }
                     });
 
@@ -63,8 +64,8 @@ public class GamePanel extends JPanel {
         }
     }
 
-    public void setEnabled(JButton button,boolean hit){
-            button.setEnabled(hit);
+    public void setEnabled(int i, int j){
+        button[i+1][j+1].setEnabled(false);
     }
 
 

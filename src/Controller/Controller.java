@@ -2,6 +2,7 @@ package Controller;
 
 import Model.Ship.*;
 import Model.Spelplan1;
+import View.GamePanel;
 import View.MainFrame;
 //TEST
 public class Controller {
@@ -10,6 +11,7 @@ public class Controller {
     private Ship ship;
     private Ship[][] ships;
     private MainFrame view;
+    private GamePanel gpanel;
 
     int cruiserC = 0;
     int warriorC = 0;
@@ -21,6 +23,7 @@ public class Controller {
 
     public Controller(){
         view = new MainFrame(this);
+        gpanel = new GamePanel(this);
         createSpelPlan();
     }
 
@@ -118,6 +121,7 @@ switch(choice){
         break;
     default:
         view.setHitMiss("You missed!");
+        gpanel.setEnabled(i, j);
         break;
 
 }
