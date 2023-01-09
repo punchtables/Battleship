@@ -38,4 +38,7 @@ public class MainFrame {
     public void setMissButton(int i, int j){
         panel.setMissButton(i, j);
     }
+    public void setHitButton(int i, int j){
+        panel.setHitButton(i, j);
+    }
 }

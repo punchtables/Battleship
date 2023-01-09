@@ -48,7 +48,7 @@ public class GamePanel extends JPanel {
                 } else {
                     button[i][j] = new JButton("");
                     button[i][j].setPreferredSize(new Dimension(40,40));
-
+                    button[i][j].setMargin(new Insets(0,0,0,0));
                     add(button[i][j]);
 
                     int finalJ = (j-1);
@@ -70,14 +70,31 @@ public class GamePanel extends JPanel {
         button[i+1][j+1].setEnabled(false);
     }
     public void setMissButton(int i, int j){
-        Color color = new Color(3, 203, 255);
-        button[i+1][j+1].setBackground(color);
+        i = i+1;
+        j = j+1;
+        Color color = new Color(86, 217, 253);
+        button[i][j].setBackground(color);
         //Dimension size = new Dimension(40, 40);
-        Font font = new Font("Verdana", Font.BOLD, 12);
-        button[i+1][j+1].setFont(font);
-        button[i+1][j+1].setText("X");
+        Font font = new Font("Verdana", Font.PLAIN, 36);
+        button[i][j].setText("X");
+        button[i][j].setFont(font);
+        Graphics graphics = button[i][j].getGraphics();
+        graphics.setColor(Color.black);
+
     }
-    //public void
+    public void setHitButton(int i, int j){
+        i = i+1;
+        j = j+1;
+        Color color = new Color(252, 98, 115);
+        button[i][j].setBackground(color);
+        //Dimension size = new Dimension(40, 40);
+        Font font = new Font("Verdana", Font.PLAIN, 36);
+        button[i][j].setText("X");
+        button[i][j].setFont(font);
+        Graphics graphics = button[i][j].getGraphics();
+        graphics.setColor(Color.black);
+
+    }
 
 
 

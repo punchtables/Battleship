@@ -65,7 +65,7 @@ switch(choice){
         cruiserC++;
         gameover++;
         view.disableButton(i, j);
-
+        view.setHitButton(i,j);
         if(cruiserC!=spelplan.getShipSizeAt(i,j).getSize()){
             view.setHitMiss("Cruiser hit");
         }else if(cruiserC==spelplan.getShipSizeAt(i,j).getSize()){
@@ -78,6 +78,7 @@ switch(choice){
         hunterC++;
         gameover++;
         view.disableButton(i, j);
+        view.setHitButton(i,j);
         if(hunterC!=spelplan.getShipSizeAt(i,j).getSize()){
             view.setHitMiss("Hunter hit");
         }else if(hunterC==spelplan.getShipSizeAt(i,j).getSize()){
@@ -90,6 +91,7 @@ switch(choice){
         subC++;
         gameover++;
         view.disableButton(i, j);
+        view.setHitButton(i,j);
         if(subC!=spelplan.getShipSizeAt(i,j).getSize()){
             view.setHitMiss("Submarine hit!");
         }else if(subC==spelplan.getShipSizeAt(i,j).getSize()){
@@ -102,6 +104,7 @@ switch(choice){
         torpedoC++;
         gameover++;
         view.disableButton(i, j);
+        view.setHitButton(i,j);
         if(torpedoC!=spelplan.getShipSizeAt(i,j).getSize()){
             view.setHitMiss("Torpedo hit!");
         }else if(torpedoC==spelplan.getShipSizeAt(i,j).getSize()){
@@ -114,6 +117,7 @@ switch(choice){
         warriorC++;
         gameover++;
         view.disableButton(i, j);
+        view.setHitButton(i,j);
         if(warriorC!=spelplan.getShipSizeAt(i,j).getSize()){
             view.setHitMiss("Warrior hit!");
         }else if(warriorC==spelplan.getShipSizeAt(i,j).getSize()){
