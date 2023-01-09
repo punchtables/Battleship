@@ -16,6 +16,7 @@ public class MainFrame {
         frame = new JFrame("Battleship");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(width, height);
+        frame.setResizable(false);
 
         panel = new MainPanel(controller, width, height);
         Container pane = frame.getContentPane();
