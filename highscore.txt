@@ -1,10 +1,5 @@
 LOD - 15
 TRO - 15
 MOS - 16
-SKA - 18
-SLI - 19
-SO - 20
-LOK - 22
-SLA - 23
-KAN - 24
-TRE - 24
+DAH - 33
+AND - 52
