@@ -2,7 +2,6 @@ package Controller;
 
 import Model.Ship.*;
 import Model.Spelplan1;
-import View.GamePanel;
 import View.MainFrame;
 //TEST
 public class Controller {
@@ -10,7 +9,7 @@ public class Controller {
     private Spelplan1 spelplan;
     private Ship ship;
     private Ship[][] ships;
-    private Ship[][] ships2;
+
     private MainFrame view;
 
     int cruiserC = 0;
