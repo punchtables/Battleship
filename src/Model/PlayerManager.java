@@ -14,6 +14,7 @@ public class PlayerManager {
     public PlayerManager(){
        highscore = new ArrayList<>();
        fileToArray();
+       getInfoStrings();
     }
 
     public void addPlayer(Player currentPlayer) {
@@ -49,9 +50,8 @@ public class PlayerManager {
 
     public String[] getInfoStrings() {
 
-        String[] infoString = new String[10];
+        String[] infoString = new String[highscore.size()];
         for (int i = 0; i < infoString.length; i++){
-            if (infoString[i] == null){continue;}
             infoString[i] = highscore.get(i).toString();
         }
         return infoString;

@@ -1,5 +1,4 @@
-LOD - 16
-HEJ - 18
-SUN - 37
-SOV - 47
-BAS - 64
+LOD - 15
+SO - 20
+KAN - 24
+LAK - 47
