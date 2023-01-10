@@ -190,10 +190,11 @@ switch(choice){
         }while(choice!=1 && choice!=2);
     }
 
-    private void endGameHandler(int score) throws ParseException {
+    private void endGameHandler(int score) {
         String name = view.showEndGameDialog();
         currentPlayer = new Player(name, score);
         players.addPlayer(currentPlayer);
+        System.out.println(currentPlayer.toString());
     }
 
 }

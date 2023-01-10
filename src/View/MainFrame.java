@@ -3,7 +3,7 @@ package View;
 import Controller.Controller;
 
 import javax.swing.*;
-import javax.swing.text.MaskFormatter;
+import javax.swing.text.*;
 import java.awt.*;
 import java.text.ParseException;
 
@@ -53,11 +53,34 @@ public class MainFrame {
         JOptionPane.showMessageDialog(null, "Det finns bara spelplan 1 och spelplan 2.",
                 "Felaktig spelplan", JOptionPane.ERROR_MESSAGE);
     }
-    public String showEndGameDialog() throws ParseException {
-        JFormattedTextField ftf = new JFormattedTextField(new MaskFormatter("***"));
-        ftf.setFocusLostBehavior(JFormattedTextField.COMMIT);
-        //ftf.setFont(new Font("Arial", Font.PLAIN, 12));
-        String name = JOptionPane.showInputDialog("All ships sunk! Enter your highscore name: ").toUpperCase();
+    public String showEndGameDialog() {
+        int maxLength = 3;
+        JTextField nameField = new JTextField(maxLength);
+        PlainDocument doc = new PlainDocument();
+        doc.setDocumentFilter(new DocumentFilter() {
+            @Override
+            public void insertString(FilterBypass bypass, int offset, String text, AttributeSet attr) throws BadLocationException {
+                int newLength = bypass.getDocument().getLength() + text.length();
+                if (newLength <= maxLength) {
+                    super.insertString(bypass, offset, text, attr);
+                }
+            }
+            @Override
+            public void replace(FilterBypass bypass, int offset, int length, String text, AttributeSet attr) throws BadLocationException {
+                int newLength = bypass.getDocument().getLength() - length + text.length();
+                if (newLength <= maxLength) {
+                    super.replace(bypass, offset, length, text, attr);
+                }
+            }
+        });
+        nameField.setDocument(doc);
+        Object[] options = {"OK"};
+        int response = JOptionPane.showOptionDialog(frame, new Object[] {"Game over! Enter your name: ", nameField},
+                "High Scorer", JOptionPane.NO_OPTION, JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
+
+        String name = (response == JOptionPane.OK_OPTION ? nameField.getText() : null).toUpperCase();
         return name;
     }
 }
+
+
