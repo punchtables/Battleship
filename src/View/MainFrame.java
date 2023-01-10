@@ -92,6 +92,13 @@ public class MainFrame {
     public void resetAllButtons(){
         panel.resetAllButtons();
     }
+
+    public void resetShotCounter() {
+        panel.infoPanel.resetShotCounter();
+    }
+    public void resetHitMiss() {
+        panel.infoPanel.resetHitMiss();
+    }
 }
 
 

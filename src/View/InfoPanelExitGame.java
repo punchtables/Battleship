@@ -25,6 +25,9 @@ public class InfoPanelExitGame extends JPanel {
                 controller.extiGame();
             }
         });
+    }
 
+    public void setBtnSize(JButton button) {
+        btnExitGame.setPreferredSize(button.getPreferredSize());
     }
 }

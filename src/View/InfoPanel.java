@@ -5,6 +5,7 @@ import Controller.Controller;
 import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.CompoundBorder;
+import javax.swing.border.EtchedBorder;
 import java.awt.*;
 
 public class InfoPanel extends JPanel {
@@ -23,6 +24,7 @@ public class InfoPanel extends JPanel {
         GridBagLayout layout = new GridBagLayout();
         GridBagConstraints c = new GridBagConstraints();
         setLayout(layout);
+        setBorder(new EtchedBorder(1));
 
         c.gridx = 0;
         c.gridy = 0;
@@ -47,6 +49,7 @@ public class InfoPanel extends JPanel {
         c.gridx = 0;
         c.gridy = 4;
         infoPanelExitGame = new InfoPanelExitGame(controller);
+        infoPanelExitGame.setBtnSize(infoPanelNewGame.getBtnNewGame());
         add(infoPanelExitGame, c);
     }
 

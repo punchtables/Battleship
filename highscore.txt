@@ -1,5 +1,10 @@
 LOD - 15
 TRO - 15
 MOS - 16
+JKL - 25
+TES - 26
+TEN - 28
+POL - 30
+ERT - 31
+EIG - 32
 DAH - 33
-AND - 52

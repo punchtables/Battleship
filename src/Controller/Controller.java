@@ -219,5 +219,9 @@ switch(choice){
     }
     public void btnNewGamePressed(){
         view.resetAllButtons();
+        resetAllCounters();
+        view.resetShotCounter();
+        view.resetHitMiss();
+
     }
 }

@@ -25,7 +25,9 @@ public class InfoPanelNewGame extends JPanel {
                 controller.btnNewGamePressed();
             }
         });
+    }
 
-
-}
+    public JButton getBtnNewGame() {
+        return btnNewGame;
+    }
 }
