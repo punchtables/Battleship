@@ -7,6 +7,8 @@ import java.awt.event.ActionListener;
 
 import javax.swing.*;
 import java.awt.*;
+import java.text.ParseException;
+
 //TEST
 public class GamePanel extends JPanel {
     private Controller controller;
@@ -57,7 +59,11 @@ public class GamePanel extends JPanel {
                     button[i][j].addActionListener(new ActionListener() {
                         @Override
                         public void actionPerformed(ActionEvent e) {
-                        controller.checkPosition(finalI, finalJ);
+                            try {
+                                controller.checkPosition(finalI, finalJ);
+                            } catch (ParseException ex) {
+                                throw new RuntimeException(ex);
+                            }
                         }
                     });
 

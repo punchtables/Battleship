@@ -87,7 +87,7 @@ public class Controller {
         spelplan = new Spelplan1(ships);
 
     }
-public void checkPosition(int i, int j){
+public void checkPosition(int i, int j) throws ParseException {
     System.out.println(i+" "+j);
     shots++;
 
@@ -106,7 +106,7 @@ switch(choice){
         }else if(cruiserC==spelplan.getShipSizeAt(i,j).getSize()){
             view.setHitMiss("Cruiser sunk!");
         }if(gameover==15){
-            view.setHitMiss("All ships sunk!");
+            endGameHandler(shots);
         }
         break;
     case "Model.Ship.Hunter":
@@ -119,7 +119,7 @@ switch(choice){
         }else if(hunterC==spelplan.getShipSizeAt(i,j).getSize()){
             view.setHitMiss("Hunter sunk!");
         }if(gameover==15){
-            view.setHitMiss("All ships sunk!");
+            endGameHandler(shots);
         }
         break;
     case "Model.Ship.Submarine":
@@ -132,7 +132,7 @@ switch(choice){
         }else if(subC==spelplan.getShipSizeAt(i,j).getSize()){
             view.setHitMiss("Submarine sunk!");
         }if(gameover==15){
-            view.setHitMiss("All ships sunk!");
+            endGameHandler(shots);
         }
         break;
     case "Model.Ship.Torpedo":
@@ -145,7 +145,7 @@ switch(choice){
         }else if(torpedoC==spelplan.getShipSizeAt(i,j).getSize()){
             view.setHitMiss("Torpedo sunk!");
         }if(gameover==15){
-            view.setHitMiss("All ships sunk!");
+            endGameHandler(shots);
         }
         break;
     case "Model.Ship.Warrior":
@@ -158,7 +158,7 @@ switch(choice){
         }else if(warriorC==spelplan.getShipSizeAt(i,j).getSize()){
             view.setHitMiss("Warrior sunk!");
         }if(gameover==15){
-            view.setHitMiss("All ships sunk!");
+            endGameHandler(shots);
         }
         break;
     default:
