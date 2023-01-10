@@ -26,4 +26,8 @@ public class InfoPanelShots extends JPanel {
         this.nbrOfShots = nbrOfShots;
         shots.setText("Shots: " + nbrOfShots);
     }
+
+    public void resetShotCounter() {
+        shots.setText("Shots: 0");
+    }
 }

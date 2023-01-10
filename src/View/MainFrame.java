@@ -81,6 +81,11 @@ public class MainFrame {
         String name = (response == JOptionPane.OK_OPTION ? nameField.getText() : null).toUpperCase();
         return name;
     }
+    public void resetGame() {
+        panel.gamePanel.resetAllButtons();
+        panel.infoPanel.resetShotCounter();
+        panel.infoPanel.resetHitMiss();
+    }
 }
 
 

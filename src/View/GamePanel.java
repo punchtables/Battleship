@@ -99,7 +99,16 @@ public class GamePanel extends JPanel {
         button[i][j].setFont(font);
         Graphics graphics = button[i][j].getGraphics();
         graphics.setColor(Color.black);
+    }
 
+    public void resetAllButtons() {
+        for (int i = 1; i < button.length; i++) {
+            for (int j = 1; j < button[i].length; j++) {
+                button[i][j].setEnabled(true);
+                button[i][j].setText("");
+                button[i][j].setBackground(null);
+            }
+        }
     }
 
 

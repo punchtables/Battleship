@@ -194,7 +194,18 @@ switch(choice){
         String name = view.showEndGameDialog();
         currentPlayer = new Player(name, score);
         players.addPlayer(currentPlayer);
-        System.out.println(currentPlayer.toString());
+        resetAllCounters();
+        view.resetGame();
+        selectBoard();
+    }
+    public void resetAllCounters() {
+        cruiserC = 0;
+        warriorC = 0;
+        torpedoC = 0;
+        subC = 0;
+        hunterC = 0;
+        shots = 0;
+        gameover = 0;
     }
 
 }
