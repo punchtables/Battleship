@@ -73,6 +73,7 @@ public class GamePanel extends JPanel {
     }
 
     public void disableButton(int i, int j){
+        UIManager.getDefaults().put("Button.disabledText",Color.BLACK);
         button[i+1][j+1].setEnabled(false);
     }
     public void setMissButton(int i, int j){
