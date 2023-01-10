@@ -10,6 +10,7 @@ public class Controller {
     private Spelplan1 spelplan;
     private Ship ship;
     private Ship[][] ships;
+    private Ship[][] ships2;
     private MainFrame view;
 
     int cruiserC = 0;
@@ -22,10 +23,10 @@ public class Controller {
 
     public Controller(){
         view = new MainFrame(this);
-        createSpelPlan();
+        selectBoard();
     }
 
-   public void createSpelPlan(){
+   public void createSpelPlan1(){
         ships = new Ship[10][10];
 
         Ship cruiser = new Cruiser(4);
@@ -49,6 +50,33 @@ public class Controller {
         ships[6][8] = warrior;
         ships[7][8] = warrior;
         ships[8][8] = warrior;
+        spelplan = new Spelplan1(ships);
+
+    }
+    public void createSpelPlan2(){
+        ships = new Ship[10][10];
+
+        Ship submarine = new Submarine(1);
+        Ship torpedo = new Torpedo(2);
+        Ship hunter = new Hunter(3);
+        Ship cruiser = new Cruiser(4);
+        Ship warrior = new Warrior(5);
+
+        ships[9][3] = cruiser;
+        ships[9][4] = cruiser;
+        ships[9][5] = cruiser;
+        ships[9][6] = cruiser;
+        ships[3][7] = hunter;
+        ships[4][7] = hunter;
+        ships[5][7] = hunter;
+        ships[8][9] = submarine;
+        ships[1][7] = torpedo;
+        ships[1][8] = torpedo;
+        ships[0][3] = warrior;
+        ships[1][3] = warrior;
+        ships[2][3] = warrior;
+        ships[3][3] = warrior;
+        ships[4][3] = warrior;
         spelplan = new Spelplan1(ships);
 
     }
@@ -135,6 +163,25 @@ switch(choice){
 }
 
 }
+    public void selectBoard(){
+
+        int choice = 0;
+
+        do {
+            choice = view.selectBoardI();
+            switch (choice) {
+                case 1:
+                    createSpelPlan1();
+                    break;
+                case 2:
+                    createSpelPlan2();
+                    break;
+                default:
+                    view.showBoardError();
+                    break;
+            }
+        }while(choice!=1 && choice!=2);
+    }
 
 
 

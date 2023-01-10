@@ -42,4 +42,13 @@ public class MainFrame {
     public void setHitButton(int i, int j){
         panel.setHitButton(i, j);
     }
+
+    public int selectBoardI(){
+        String parseThis = JOptionPane.showInputDialog("Välj bana 1 eller 2: ");
+        return Integer.parseInt(parseThis);
+    }
+    public void showBoardError() {
+        JOptionPane.showMessageDialog(null, "Det finns bara spelplan 1 och spelplan 2.",
+                "Felaktig spelplan", JOptionPane.ERROR_MESSAGE);
+    }
 }
