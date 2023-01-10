@@ -24,4 +24,8 @@ public class InfoPanelHitMiss extends JPanel {
         this.miss = miss;
         hit.setText(miss);
     }
+
+    public void resetHitMiss() {
+        hit.setText("Hit/Miss: ");
+    }
 }

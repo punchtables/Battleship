@@ -56,4 +56,10 @@ public class InfoPanel extends JPanel {
     public void populateHit(String miss){
         infoPanelHitMiss.setText(miss);
     }
+    public void resetShotCounter() {
+        infoPanelShots.resetShotCounter();
+    }
+    public void resetHitMiss() {
+        infoPanelHitMiss.resetHitMiss();
+    }
 }
