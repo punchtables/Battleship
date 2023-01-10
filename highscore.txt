@@ -1,1 +1,5 @@
-TRE - 26
+LOD - 16
+HEJ - 18
+SUN - 37
+SOV - 47
+BAS - 64

@@ -1,10 +1,10 @@
 package Model;
+import java.io.*;
 import java.util.ArrayList;
-import java.io.File;
-import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.Comparator;
 import java.util.Collections;
+import java.util.List;
+import java.util.Scanner;
 
 
 public class PlayerManager {
@@ -33,8 +33,17 @@ public class PlayerManager {
         }
     }
 
-    public void FileToArray(){
+    public void fileToArray(){
+        highscore = new ArrayList<>();
 
+        try(
+                Scanner scanner = new Scanner(new FileReader("highscore.txt"))){
+                while(scanner.hasNextLine()) {
+                    String[] parts = scanner.nextLine().split(" - ");
+                    Player player = new Player(parts[0], Integer.valueOf(parts[1]));
+                    highscore.add(player);
+                }
+        }catch(Exception e){}
     }
 
     public String[] getInfoStrings() {
@@ -44,6 +53,7 @@ public class PlayerManager {
             infoString[i] = highscore.get(i).toString();
         }
         return  infoString;
+
     }
 
     /*public void sortArray(){
