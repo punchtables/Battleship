@@ -30,6 +30,7 @@ public class Controller {
     public Controller(){
         view = new MainFrame(this);
         players = new PlayerManager();
+        populateHighScore();
         selectBoard();
     }
 
@@ -208,4 +209,11 @@ switch(choice){
         gameover = 0;
     }
 
+    public void populateHighScore() {
+        String[] infoString = players.getInfoStrings();
+        view.createHighScore(infoString);
+        for (int i = 0; i < infoString.length; i++) {
+            System.out.println(infoString[i]);
+        }
+    }
 }

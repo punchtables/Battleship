@@ -62,4 +62,7 @@ public class InfoPanel extends JPanel {
     public void resetHitMiss() {
         infoPanelHitMiss.resetHitMiss();
     }
+    public void createHighScore(String[] infoString) {
+        infoPanelHighScore.createHighScore(infoString);
+    }
 }

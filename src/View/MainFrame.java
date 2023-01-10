@@ -86,6 +86,9 @@ public class MainFrame {
         panel.infoPanel.resetShotCounter();
         panel.infoPanel.resetHitMiss();
     }
+    public void createHighScore(String[] infoString) {
+        panel.infoPanel.createHighScore(infoString);
+    }
 }
 
 
