@@ -30,7 +30,6 @@ public class Controller {
     public Controller(){
         view = new MainFrame(this);
         players = new PlayerManager();
-        players.fileToArray();
         selectBoard();
     }
 

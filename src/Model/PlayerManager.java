@@ -13,6 +13,7 @@ public class PlayerManager {
 
     public PlayerManager(){
        highscore = new ArrayList<>();
+       fileToArray();
     }
 
     public void addPlayer(Player currentPlayer) {
