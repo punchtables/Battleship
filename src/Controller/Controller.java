@@ -197,6 +197,7 @@ switch(choice){
         players.addPlayer(currentPlayer);
         resetAllCounters();
         view.resetGame();
+        populateHighScore();
         selectBoard();
     }
     public void resetAllCounters() {
@@ -212,8 +213,5 @@ switch(choice){
     public void populateHighScore() {
         String[] infoString = players.getInfoStrings();
         view.createHighScore(infoString);
-        for (int i = 0; i < infoString.length; i++) {
-            System.out.println(infoString[i]);
-        }
     }
 }
