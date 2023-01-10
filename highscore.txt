@@ -1,4 +1,5 @@
 LOD - 15
+TRO - 15
 SO - 20
 SLA - 23
 KAN - 24
@@ -7,4 +8,3 @@ FIA - 26
 YUP - 26
 TIO - 30
 MAH - 34
-JOS - 38

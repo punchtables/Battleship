@@ -50,7 +50,7 @@ public class PlayerManager {
 
     public String[] getInfoStrings() {
 
-        String[] infoString = new String[highscore.size()];
+        String[] infoString = new String[10];
         for (int i = 0; i < infoString.length; i++){
             infoString[i] = highscore.get(i).toString();
         }
