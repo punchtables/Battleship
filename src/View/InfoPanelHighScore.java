@@ -39,10 +39,8 @@ public class InfoPanelHighScore extends JPanel {
         list = new JList<>();
         list.setFixedCellWidth(70);
         list.setFont(new Font("Courier New", Font.PLAIN, 12));
-
         DefaultListCellRenderer renderer = (DefaultListCellRenderer) list.getCellRenderer();
         renderer.setHorizontalAlignment(SwingConstants.CENTER);
-
         list.setVisible(true);
         list.setBorder(new LineBorder(Color.BLACK));
         list.setVisibleRowCount(10);
