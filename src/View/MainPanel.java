@@ -52,4 +52,7 @@ public class MainPanel extends JPanel {
     public void setHitButton(int i, int j){
         gamePanel.setHitButton(i, j);
     }
+    public void resetAllButtons(){
+        gamePanel.resetAllButtons();
+    }
 }

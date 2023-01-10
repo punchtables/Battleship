@@ -198,7 +198,7 @@ switch(choice){
         resetAllCounters();
         view.resetGame();
         populateHighScore();
-        selectBoard();
+        //selectBoard();
     }
     public void resetAllCounters() {
         cruiserC = 0;
@@ -213,5 +213,11 @@ switch(choice){
     public void populateHighScore() {
         String[] infoString = players.getInfoStrings();
         view.createHighScore(infoString);
+    }
+    public void extiGame(){
+        System.exit(0);
+    }
+    public void btnNewGamePressed(){
+        view.resetAllButtons();
     }
 }

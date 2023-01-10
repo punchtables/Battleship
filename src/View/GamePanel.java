@@ -111,6 +111,16 @@ public class GamePanel extends JPanel {
         }
     }
 
+    public void disableAllButtons() {
+        for (int i = 1; i < button.length; i++) {
+            for (int j = 1; j < button[i].length; j++) {
+                button[i][j].setEnabled(false);
+                button[i][j].setText("");
+                button[i][j].setBackground(null);
+            }
+        }
+    }
+
 
 
 

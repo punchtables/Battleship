@@ -82,12 +82,15 @@ public class MainFrame {
         return name;
     }
     public void resetGame() {
-        panel.gamePanel.resetAllButtons();
+        panel.gamePanel.disableAllButtons();
         panel.infoPanel.resetShotCounter();
         panel.infoPanel.resetHitMiss();
     }
     public void createHighScore(String[] infoString) {
         panel.infoPanel.createHighScore(infoString);
+    }
+    public void resetAllButtons(){
+        panel.resetAllButtons();
     }
 }
 

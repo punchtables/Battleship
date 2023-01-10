@@ -3,6 +3,8 @@ package View;
 import Controller.Controller;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class InfoPanelNewGame extends JPanel {
     private Controller controller;
@@ -16,5 +18,14 @@ public class InfoPanelNewGame extends JPanel {
     private void createComponents() {
         btnNewGame = new JButton("New Game");
         add(btnNewGame);
-    }
+        btnNewGame.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                controller.selectBoard();
+                controller.btnNewGamePressed();
+            }
+        });
+
+
+}
 }
