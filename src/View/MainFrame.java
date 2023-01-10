@@ -3,7 +3,9 @@ package View;
 import Controller.Controller;
 
 import javax.swing.*;
+import javax.swing.text.MaskFormatter;
 import java.awt.*;
+import java.text.ParseException;
 
 public class MainFrame {
     private JFrame frame;
@@ -50,5 +52,12 @@ public class MainFrame {
     public void showBoardError() {
         JOptionPane.showMessageDialog(null, "Det finns bara spelplan 1 och spelplan 2.",
                 "Felaktig spelplan", JOptionPane.ERROR_MESSAGE);
+    }
+    public String showEndGameDialog() throws ParseException {
+        JFormattedTextField ftf = new JFormattedTextField(new MaskFormatter("***"));
+        ftf.setFocusLostBehavior(JFormattedTextField.COMMIT);
+        //ftf.setFont(new Font("Arial", Font.PLAIN, 12));
+        String name = JOptionPane.showInputDialog("All ships sunk! Enter your highscore name: ").toUpperCase();
+        return name;
     }
 }

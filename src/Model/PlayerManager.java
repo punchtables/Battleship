@@ -9,4 +9,8 @@ public class PlayerManager {
        highscore = new ArrayList<>();
     }
 
+    public void addPlayer(Player currentPlayer) {
+        highscore.add(currentPlayer);
+    }
+
 }

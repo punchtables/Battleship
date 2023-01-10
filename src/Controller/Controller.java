@@ -1,8 +1,13 @@
 package Controller;
 
+import Model.Player;
+import Model.PlayerManager;
 import Model.Ship.*;
 import Model.Spelplan1;
 import View.MainFrame;
+
+import java.text.ParseException;
+
 //TEST
 public class Controller {
 
@@ -11,6 +16,8 @@ public class Controller {
     private Ship[][] ships;
 
     private MainFrame view;
+    private PlayerManager players;
+    private Player currentPlayer;
 
     int cruiserC = 0;
     int warriorC = 0;
@@ -22,6 +29,7 @@ public class Controller {
 
     public Controller(){
         view = new MainFrame(this);
+        players = new PlayerManager();
         selectBoard();
     }
 
@@ -182,8 +190,10 @@ switch(choice){
         }while(choice!=1 && choice!=2);
     }
 
-
-
-
+    private void endGameHandler(int score) throws ParseException {
+        String name = view.showEndGameDialog();
+        currentPlayer = new Player(name, score);
+        players.addPlayer(currentPlayer);
+    }
 
 }
