@@ -31,7 +31,6 @@ public class GamePanel extends JPanel {
                     add(new JLabel(""));
                 }
                 else if (i == 0 && j > 0) {
-                    // Add the column labels
                     JLabel label = new JLabel("" + Character.toString(c), SwingConstants.CENTER);
                     label.setPreferredSize(new Dimension(40, 40));
                     Font font = new Font("Arial", Font.BOLD, 12);
@@ -40,7 +39,6 @@ public class GamePanel extends JPanel {
                     c++;
 
                 } else if (j == 0 && i > 0) {
-                    // Add the row labels
                     JLabel labell = new JLabel(String.valueOf(i), SwingConstants.CENTER);
                     labell.setPreferredSize(new Dimension(40, 40));
                     Font font = new Font("Arial", Font.BOLD, 12);
