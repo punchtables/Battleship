@@ -89,9 +89,7 @@ public class Controller {
 
     }
 public void checkPosition(int i, int j) throws ParseException {
-    System.out.println(i+" "+j);
     shots++;
-
     view.increaseShotCounter(shots);
 
     String choice = spelplan.getShipAt(i,j);

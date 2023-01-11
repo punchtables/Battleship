@@ -36,8 +36,6 @@ public class PlayerManager {
     }
 
     public void fileToArray(){
-        //highscore = new ArrayList<>();
-
         try(
                 Scanner scanner = new Scanner(new FileReader("highscore.txt"))){
                 while(scanner.hasNextLine()) {
