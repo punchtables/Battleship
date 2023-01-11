@@ -3,6 +3,7 @@ package View;
 import Controller.Controller;
 
 import javax.swing.*;
+import javax.swing.border.LineBorder;
 import javax.swing.text.*;
 import java.awt.*;
 import java.text.ParseException;
@@ -47,21 +48,26 @@ public class MainFrame {
 
     public int selectBoardI(){
         String[] options = {"OK"};
-        int choice;
+        int choice = 0;
         JPanel panel = new JPanel();
-        JLabel lbl = new JLabel("Choose board 1 or 2: ");
+        JLabel lbl = new JLabel("Choose board 1 or 2: ", SwingConstants.CENTER);
         JTextField txt = new JTextField(1);
+        txt.setBorder(new LineBorder(Color.BLACK, 1));
         panel.add(lbl);
         panel.add(txt);
         int selectedOption = JOptionPane.showOptionDialog(null, panel, "Gameboard", JOptionPane.NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, options , options[0]);
-        choice = Integer.parseInt(txt.getText());
+        if (selectedOption == 0) {
+            try {
+                choice = Integer.parseInt(txt.getText());
+            }
+            catch(NumberFormatException e) {}
+        }
         return choice;
-        /*String parseThis = JOptionPane.showInputDialog("Välj bana 1 eller 2: ");
-        return Integer.parseInt(parseThis);*/
+
     }
     public void showBoardError() {
-        JOptionPane.showMessageDialog(null, "There are only 2 boards to choose between.",
-                "Wrong board", JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(null, "Please enter a valid number",
+                "Wrong board input", JOptionPane.ERROR_MESSAGE);
     }
     public String showEndGameDialog() {
         int maxLength = 3;
@@ -89,6 +95,12 @@ public class MainFrame {
                 "High Scorer", JOptionPane.NO_OPTION, JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
 
         String name = (response == JOptionPane.OK_OPTION ? nameField.getText() : null).toUpperCase();
+        if (name.length() == 2) {
+            name = name + "!";
+        }
+        if (name.length() == 1) {
+            name = name + "!!";
+        }
         return name;
     }
     public void resetGame() {
