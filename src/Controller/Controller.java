@@ -3,30 +3,39 @@ package Controller;
 import Model.Player;
 import Model.PlayerManager;
 import Model.Ship.*;
-import Model.Spelplan1;
+import Model.Spelplan;
 import View.MainFrame;
 
 import java.text.ParseException;
 
-//TEST
+/**
+ * Controller-klassen som kontroller all input från GUI:t och skickar datan till model-klasserna.
+ * Ansvarar även för uträkningar och analys av datan från model samt view.
+ * Skapar också MainFrame och spelplanerna.
+ * @author Johannes Danielson och Anders Dahlheim
+ */
 public class Controller {
 
-    private Spelplan1 spelplan;
-    private Ship ship;
+    private Spelplan spelplan;
     private Ship[][] ships;
 
     private MainFrame view;
     private PlayerManager players;
     private Player currentPlayer;
 
-    int cruiserC = 0;
-    int warriorC = 0;
-    int torpedoC = 0;
-    int subC = 0;
-    int hunterC = 0;
-    int shots;
-    int gameover;
+    private int cruiserC = 0;
+    private int warriorC = 0;
+    private int torpedoC = 0;
+    private int subC = 0;
+    private int hunterC = 0;
+    private int shots;
+    private int gameover;
 
+    /**
+     * Konstruktor som startar MainFrame samt initierar PlayerManager-klassen som ansvarar för highscore.
+     * Den ser även till att highscore listan finns med från början genom metoden "populateHighScore" och
+     * att det första som händer är att man väljer spelplan.
+     */
     public Controller(){
         view = new MainFrame(this);
         players = new PlayerManager();
@@ -34,6 +43,9 @@ public class Controller {
         selectBoard();
     }
 
+    /**
+     * Denna metod ansvarar för att skapa den första spelplanen.
+     */
    public void createSpelPlan1(){
         ships = new Ship[10][10];
 
@@ -58,9 +70,13 @@ public class Controller {
         ships[6][8] = warrior;
         ships[7][8] = warrior;
         ships[8][8] = warrior;
-        spelplan = new Spelplan1(ships);
+        spelplan = new Spelplan(ships);
 
     }
+
+    /**
+     * Denna metod ansvarar för att skapa den andra spelplanen.
+     */
     public void createSpelPlan2(){
         ships = new Ship[10][10];
 
@@ -85,15 +101,20 @@ public class Controller {
         ships[2][3] = warrior;
         ships[3][3] = warrior;
         ships[4][3] = warrior;
-        spelplan = new Spelplan1(ships);
+        spelplan = new Spelplan(ships);
 
     }
-public void checkPosition(int i, int j) throws ParseException {
-    System.out.println(i+" "+j);
+
+    /**
+     * Denna metod ansvarar för att hantera inputen från GUI:t när man trycker på de olika knapparna på spelplanen.
+     * Den tar emot två index, i och j, för att sedan kolla om det finns ett skepp på spelplanen på den positionen.
+     * @param i
+     * @param j
+     * @throws ParseException
+     */
+    public void checkPosition(int i, int j) throws ParseException {
     shots++;
-
     view.increaseShotCounter(shots);
-
     String choice = spelplan.getShipAt(i,j);
 switch(choice){
 
@@ -171,6 +192,10 @@ switch(choice){
 }
 
 }
+
+    /**
+     * Denna metod ansvarar för hantera val av spelplan.
+     */
     public void selectBoard(){
 
         int choice = 0;
@@ -191,6 +216,10 @@ switch(choice){
         }while(choice!=1 && choice!=2);
     }
 
+    /**
+     * Denna metod hanterar vad som händer när alla skepp på spelplanen är träffade.
+     * @param score
+     */
     private void endGameHandler(int score) {
         String name = view.showEndGameDialog();
         currentPlayer = new Player(name, score);
@@ -198,8 +227,12 @@ switch(choice){
         resetAllCounters();
         view.resetGame();
         populateHighScore();
-        //selectBoard();
+
     }
+
+    /**
+     * Denna metod nollställer alla counters för den nya spelaren och omgången.
+     */
     public void resetAllCounters() {
         cruiserC = 0;
         warriorC = 0;
@@ -210,13 +243,25 @@ switch(choice){
         gameover = 0;
     }
 
+    /**
+     * Denna metod ansvarar för att skicka fylla highscore-listan med
+     * highscores.
+     */
     public void populateHighScore() {
         String[] infoString = players.getInfoStrings();
         view.createHighScore(infoString);
     }
+
+    /**
+     * Denna metod anropas när man trycker på Exit-knappen och avslutar hela programmet.
+     */
     public void extiGame(){
         System.exit(0);
     }
+
+    /**
+     * Denna metod anropas när man trycker på New Game-knappen och startar ett nytt spel.
+     */
     public void btnNewGamePressed(){
         view.resetAllButtons();
         resetAllCounters();

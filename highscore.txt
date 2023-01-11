@@ -1,10 +1,10 @@
 LOD - 15
 TRO - 15
+HEJ - 15
+SPO - 15
+FAK - 15
 MOS - 16
+SPO - 19
 JKL - 25
-TES - 26
-TEN - 28
-POL - 30
-ERT - 31
-EIG - 32
-WWW - 33
+SKO - 25
+SPU - 25
