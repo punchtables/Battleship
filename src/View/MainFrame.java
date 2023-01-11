@@ -49,19 +49,19 @@ public class MainFrame {
         String[] options = {"OK"};
         int choice;
         JPanel panel = new JPanel();
-        JLabel lbl = new JLabel("Välj Spelplan 1 eller 2: ");
+        JLabel lbl = new JLabel("Choose board 1 or 2: ");
         JTextField txt = new JTextField(1);
         panel.add(lbl);
         panel.add(txt);
-        int selectedOption = JOptionPane.showOptionDialog(null, panel, "Spelplan", JOptionPane.NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, options , options[0]);
+        int selectedOption = JOptionPane.showOptionDialog(null, panel, "Gameboard", JOptionPane.NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, options , options[0]);
         choice = Integer.parseInt(txt.getText());
         return choice;
         /*String parseThis = JOptionPane.showInputDialog("Välj bana 1 eller 2: ");
         return Integer.parseInt(parseThis);*/
     }
     public void showBoardError() {
-        JOptionPane.showMessageDialog(null, "Det finns bara spelplan 1 och spelplan 2.",
-                "Felaktig spelplan", JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(null, "There are only 2 boards to choose between.",
+                "Wrong board", JOptionPane.ERROR_MESSAGE);
     }
     public String showEndGameDialog() {
         int maxLength = 3;
