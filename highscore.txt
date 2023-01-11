@@ -5,6 +5,6 @@ SPO - 15
 FAK - 15
 MOS - 16
 SPO - 19
+YEA - 24
 JKL - 25
 SKO - 25
-SPU - 25

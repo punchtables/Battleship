@@ -46,8 +46,18 @@ public class MainFrame {
     }
 
     public int selectBoardI(){
-        String parseThis = JOptionPane.showInputDialog("Välj bana 1 eller 2: ");
-        return Integer.parseInt(parseThis);
+        String[] options = {"OK"};
+        int choice;
+        JPanel panel = new JPanel();
+        JLabel lbl = new JLabel("Välj Spelplan 1 eller 2: ");
+        JTextField txt = new JTextField(1);
+        panel.add(lbl);
+        panel.add(txt);
+        int selectedOption = JOptionPane.showOptionDialog(null, panel, "Spelplan", JOptionPane.NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, options , options[0]);
+        choice = Integer.parseInt(txt.getText());
+        return choice;
+        /*String parseThis = JOptionPane.showInputDialog("Välj bana 1 eller 2: ");
+        return Integer.parseInt(parseThis);*/
     }
     public void showBoardError() {
         JOptionPane.showMessageDialog(null, "Det finns bara spelplan 1 och spelplan 2.",
